@@ -14,17 +14,6 @@ import essentia.standard as es
 import IPython as ipy
 ```
 
-    Looking in indexes: https://pypi.org/simple, https://us-python.pkg.dev/colab-wheels/public/simple/
-    Collecting essentia
-      Downloading essentia-2.1b6.dev778-cp37-cp37m-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (13.6 MB)
-    [K     |████████████████████████████████| 13.6 MB 4.7 MB/s 
-    [?25hRequirement already satisfied: six in /usr/local/lib/python3.7/dist-packages (from essentia) (1.15.0)
-    Requirement already satisfied: numpy>=1.8.2 in /usr/local/lib/python3.7/dist-packages (from essentia) (1.21.6)
-    Requirement already satisfied: pyyaml in /usr/local/lib/python3.7/dist-packages (from essentia) (3.13)
-    Installing collected packages: essentia
-    Successfully installed essentia-2.1b6.dev778
-
-
 # Tempo Detection (Our Implementation)
 
 Display all of the files given and their annotated tempo
@@ -34,7 +23,7 @@ Display all of the files given and their annotated tempo
 import glob
 
 #load files
-mediaDir = './tempo_dataFolder'
+mediaDir = './tempo_dataFolder/'
 
 audio_files = glob.glob(mediaDir + '*.wav')
 bpm_files = glob.glob(mediaDir + '*.bpm')
@@ -60,41 +49,41 @@ for file in audio_files:
 ```
 
     
-    ----- file 1: es_flat_ahs_flat_too.wav-----
-    151.419195 bpm
-    
-    ----- file 2: 01-Dancing_with_the_Moonlit_Knight.wav-----
-    80.097495 bpm
-    
-    ----- file 3: 12-It_s_Not_Up_To_You.wav-----
-    80.308707 bpm
-    
-    ----- file 4: 07-Operation_Eagle_Lie.wav-----
-    81.996225 bpm
-    
-    ----- file 5: 12-Culture_Move.wav-----
-    83.046810 bpm
-    
-    ----- file 6: 01-24-24.wav-----
-    104.155455 bpm
-    
-    ----- file 7: 03-La Puesta De Sol.wav-----
-    116.911844 bpm
-    
-    ----- file 8: Trubaci - Nikol.wav-----
-    110.261039 bpm
-    
-    ----- file 9: To pasoumi - Smyrni.wav-----
-    80.916280 bpm
-    
-    ----- file 10: 20-AudioTrack 20.wav-----
+    ----- file 1: 20-AudioTrack 20.wav-----
     103.806219 bpm
     
-    ----- file 11: 14-Gimme! Gimme! Gimme! (A Man After Midnight).wav-----
+    ----- file 2: 03-La Puesta De Sol.wav-----
+    116.911844 bpm
+    
+    ----- file 3: 14-Gimme! Gimme! Gimme! (A Man After Midnight).wav-----
     120.000000 bpm
     
-    ----- file 12: 02-Knowing Me, Knowing You.wav-----
+    ----- file 4: 01-24-24.wav-----
+    104.155455 bpm
+    
+    ----- file 5: Trubaci - Nikol.wav-----
+    110.261039 bpm
+    
+    ----- file 6: To pasoumi - Smyrni.wav-----
+    80.916280 bpm
+    
+    ----- file 7: 07-Operation_Eagle_Lie.wav-----
+    81.996225 bpm
+    
+    ----- file 8: 01-Dancing_with_the_Moonlit_Knight.wav-----
+    80.097495 bpm
+    
+    ----- file 9: 12-Culture_Move.wav-----
+    83.046810 bpm
+    
+    ----- file 10: 02-Knowing Me, Knowing You.wav-----
     105.755105 bpm
+    
+    ----- file 11: 12-It_s_Not_Up_To_You.wav-----
+    80.308707 bpm
+    
+    ----- file 12: es_flat_ahs_flat_too.wav-----
+    151.419195 bpm
 
 
 Spectral Flux tempo detection
@@ -251,75 +240,15 @@ for i in range(len(song_list)):
     
 
 
-    Lowest "Strong" Frequencies: [35, 35, 53, 17, 18, 177, 176, 35, 17, 36, 15]
-    Median Frequency: 35.0
-    Estimated BPM: 75.6
+    Lowest "Strong" Frequencies: [52, 25, 52, 15, 2, 206, 206, 51, 102, 52, 51]
+    Median Frequency: 52.0
+    Estimated BPM: 101.76
     --------------------------------------------------
 
 
 
     
 ![png](tempo_detection_files/tempo_detection_9_2.png)
-    
-
-
-    Lowest "Strong" Frequencies: [1, 1, 95, 162, 49, 35, 5, 75, 63, 36, 49]
-    Median Frequency: 49.0
-    Estimated BPM: 108.0
-    --------------------------------------------------
-
-
-
-    
-![png](tempo_detection_files/tempo_detection_9_4.png)
-    
-
-
-    Lowest "Strong" Frequencies: [33, 33, 33, 99, 99, 33, 33, 116, 16, 116, 16]
-    Median Frequency: 33.0
-    Estimated BPM: 80.18
-    --------------------------------------------------
-
-
-
-    
-![png](tempo_detection_files/tempo_detection_9_6.png)
-    
-
-
-    Lowest "Strong" Frequencies: [16, 16, 16, 16, 16, 16, 4, 4, 4, 17, 12]
-    Median Frequency: 16.0
-    Estimated BPM: 82.69
-    --------------------------------------------------
-
-
-
-    
-![png](tempo_detection_files/tempo_detection_9_8.png)
-    
-
-
-    Lowest "Strong" Frequencies: [16, 16, 16, 16, 16, 16, 80, 16, 16, 96, 39]
-    Median Frequency: 16.0
-    Estimated BPM: 82.69
-    --------------------------------------------------
-
-
-
-    
-![png](tempo_detection_files/tempo_detection_9_10.png)
-    
-
-
-    Lowest "Strong" Frequencies: [102, 102, 102, 102, 102, 102, 102, 102, 203, 102, 51]
-    Median Frequency: 102.0
-    Estimated BPM: 103.76
-    --------------------------------------------------
-
-
-
-    
-![png](tempo_detection_files/tempo_detection_9_12.png)
     
 
 
@@ -331,43 +260,7 @@ for i in range(len(song_list)):
 
 
     
-![png](tempo_detection_files/tempo_detection_9_14.png)
-    
-
-
-    Lowest "Strong" Frequencies: [96, 96, 96, 96, 96, 96, 96, 96, 96, 96, 36]
-    Median Frequency: 96.0
-    Estimated BPM: 110.24
-    --------------------------------------------------
-
-
-
-    
-![png](tempo_detection_files/tempo_detection_9_16.png)
-    
-
-
-    Lowest "Strong" Frequencies: [104, 226, 37, 66, 49, 133, 67, 130, 33, 133, 2]
-    Median Frequency: 67.0
-    Estimated BPM: 78.98
-    --------------------------------------------------
-
-
-
-    
-![png](tempo_detection_files/tempo_detection_9_18.png)
-    
-
-
-    Lowest "Strong" Frequencies: [52, 25, 52, 15, 2, 206, 206, 51, 102, 52, 51]
-    Median Frequency: 52.0
-    Estimated BPM: 101.76
-    --------------------------------------------------
-
-
-
-    
-![png](tempo_detection_files/tempo_detection_9_20.png)
+![png](tempo_detection_files/tempo_detection_9_4.png)
     
 
 
@@ -379,13 +272,109 @@ for i in range(len(song_list)):
 
 
     
-![png](tempo_detection_files/tempo_detection_9_22.png)
+![png](tempo_detection_files/tempo_detection_9_6.png)
+    
+
+
+    Lowest "Strong" Frequencies: [102, 102, 102, 102, 102, 102, 102, 102, 203, 102, 51]
+    Median Frequency: 102.0
+    Estimated BPM: 103.76
+    --------------------------------------------------
+
+
+
+    
+![png](tempo_detection_files/tempo_detection_9_8.png)
+    
+
+
+    Lowest "Strong" Frequencies: [96, 96, 96, 96, 96, 96, 96, 96, 96, 96, 36]
+    Median Frequency: 96.0
+    Estimated BPM: 110.24
+    --------------------------------------------------
+
+
+
+    
+![png](tempo_detection_files/tempo_detection_9_10.png)
+    
+
+
+    Lowest "Strong" Frequencies: [104, 226, 37, 66, 49, 133, 67, 130, 33, 133, 2]
+    Median Frequency: 67.0
+    Estimated BPM: 78.98
+    --------------------------------------------------
+
+
+
+    
+![png](tempo_detection_files/tempo_detection_9_12.png)
+    
+
+
+    Lowest "Strong" Frequencies: [16, 16, 16, 16, 16, 16, 4, 4, 4, 17, 12]
+    Median Frequency: 16.0
+    Estimated BPM: 82.69
+    --------------------------------------------------
+
+
+
+    
+![png](tempo_detection_files/tempo_detection_9_14.png)
+    
+
+
+    Lowest "Strong" Frequencies: [1, 1, 95, 162, 49, 35, 5, 75, 63, 36, 49]
+    Median Frequency: 49.0
+    Estimated BPM: 108.0
+    --------------------------------------------------
+
+
+
+    
+![png](tempo_detection_files/tempo_detection_9_16.png)
+    
+
+
+    Lowest "Strong" Frequencies: [16, 16, 16, 16, 16, 16, 80, 16, 16, 96, 39]
+    Median Frequency: 16.0
+    Estimated BPM: 82.69
+    --------------------------------------------------
+
+
+
+    
+![png](tempo_detection_files/tempo_detection_9_18.png)
     
 
 
     Lowest "Strong" Frequencies: [100, 101, 125, 49, 197, 98, 24, 24, 49, 13, 50]
     Median Frequency: 50.0
     Estimated BPM: 105.84
+    --------------------------------------------------
+
+
+
+    
+![png](tempo_detection_files/tempo_detection_9_20.png)
+    
+
+
+    Lowest "Strong" Frequencies: [33, 33, 33, 99, 99, 33, 33, 116, 16, 116, 16]
+    Median Frequency: 33.0
+    Estimated BPM: 80.18
+    --------------------------------------------------
+
+
+
+    
+![png](tempo_detection_files/tempo_detection_9_22.png)
+    
+
+
+    Lowest "Strong" Frequencies: [35, 35, 53, 17, 18, 177, 176, 35, 17, 36, 15]
+    Median Frequency: 35.0
+    Estimated BPM: 75.6
     --------------------------------------------------
 
 
@@ -425,18 +414,99 @@ for i, file in enumerate(audio_files):
     human_bpm[i] = round(float(f.read()), 2)
 ```
 
-    /content/drive/Shareddrives/ECE160-Visell-2022/Media Files/tempo_dataFolder/es_flat_ahs_flat_too.wav
-    /content/drive/Shareddrives/ECE160-Visell-2022/Media Files/tempo_dataFolder/01-Dancing_with_the_Moonlit_Knight.wav
-    /content/drive/Shareddrives/ECE160-Visell-2022/Media Files/tempo_dataFolder/12-It_s_Not_Up_To_You.wav
-    /content/drive/Shareddrives/ECE160-Visell-2022/Media Files/tempo_dataFolder/07-Operation_Eagle_Lie.wav
-    /content/drive/Shareddrives/ECE160-Visell-2022/Media Files/tempo_dataFolder/12-Culture_Move.wav
-    /content/drive/Shareddrives/ECE160-Visell-2022/Media Files/tempo_dataFolder/01-24-24.wav
-    /content/drive/Shareddrives/ECE160-Visell-2022/Media Files/tempo_dataFolder/03-La Puesta De Sol.wav
-    /content/drive/Shareddrives/ECE160-Visell-2022/Media Files/tempo_dataFolder/Trubaci - Nikol.wav
-    /content/drive/Shareddrives/ECE160-Visell-2022/Media Files/tempo_dataFolder/To pasoumi - Smyrni.wav
-    /content/drive/Shareddrives/ECE160-Visell-2022/Media Files/tempo_dataFolder/20-AudioTrack 20.wav
-    /content/drive/Shareddrives/ECE160-Visell-2022/Media Files/tempo_dataFolder/14-Gimme! Gimme! Gimme! (A Man After Midnight).wav
-    /content/drive/Shareddrives/ECE160-Visell-2022/Media Files/tempo_dataFolder/02-Knowing Me, Knowing You.wav
+    ./tempo_dataFolder/20-AudioTrack 20.wav
+
+
+    /var/folders/x0/2jvj2jrj35lbsw0h2_0t4lth0000gn/T/ipykernel_65482/1383756918.py:7: FutureWarning: Pass y=[ 0.          0.00018311  0.00042725 ... -0.00036621 -0.00012207
+      0.        ] as keyword args. From version 0.10 passing these as positional arguments will result in an error
+      tempo_spect_flux = librosa.beat.tempo(y, sr=Fs)
+
+
+    ./tempo_dataFolder/03-La Puesta De Sol.wav
+
+
+    /var/folders/x0/2jvj2jrj35lbsw0h2_0t4lth0000gn/T/ipykernel_65482/1383756918.py:7: FutureWarning: Pass y=[ 0.0000000e+00  0.0000000e+00 -3.0517578e-05 ...  6.1035156e-05
+      3.0517578e-05  0.0000000e+00] as keyword args. From version 0.10 passing these as positional arguments will result in an error
+      tempo_spect_flux = librosa.beat.tempo(y, sr=Fs)
+
+
+    ./tempo_dataFolder/14-Gimme! Gimme! Gimme! (A Man After Midnight).wav
+
+
+    /var/folders/x0/2jvj2jrj35lbsw0h2_0t4lth0000gn/T/ipykernel_65482/1383756918.py:7: FutureWarning: Pass y=[ 0.0000000e+00 -3.0517578e-05 -3.0517578e-05 ...  6.1035156e-05
+      0.0000000e+00  0.0000000e+00] as keyword args. From version 0.10 passing these as positional arguments will result in an error
+      tempo_spect_flux = librosa.beat.tempo(y, sr=Fs)
+
+
+    ./tempo_dataFolder/01-24-24.wav
+
+
+    /var/folders/x0/2jvj2jrj35lbsw0h2_0t4lth0000gn/T/ipykernel_65482/1383756918.py:7: FutureWarning: Pass y=[-0.08563232 -0.07019043 -0.06515503 ... -0.10098267 -0.10076904
+     -0.10397339] as keyword args. From version 0.10 passing these as positional arguments will result in an error
+      tempo_spect_flux = librosa.beat.tempo(y, sr=Fs)
+
+
+    ./tempo_dataFolder/Trubaci - Nikol.wav
+
+
+    /var/folders/x0/2jvj2jrj35lbsw0h2_0t4lth0000gn/T/ipykernel_65482/1383756918.py:7: FutureWarning: Pass y=[0.0000000e+00 0.0000000e+00 3.0517578e-05 ... 2.7465820e-04 1.2207031e-04
+     0.0000000e+00] as keyword args. From version 0.10 passing these as positional arguments will result in an error
+      tempo_spect_flux = librosa.beat.tempo(y, sr=Fs)
+
+
+    ./tempo_dataFolder/To pasoumi - Smyrni.wav
+
+
+    /var/folders/x0/2jvj2jrj35lbsw0h2_0t4lth0000gn/T/ipykernel_65482/1383756918.py:7: FutureWarning: Pass y=[ 0.0000000e+00 -6.1035156e-05 -3.0517578e-05 ...  9.1552734e-05
+      3.0517578e-05  0.0000000e+00] as keyword args. From version 0.10 passing these as positional arguments will result in an error
+      tempo_spect_flux = librosa.beat.tempo(y, sr=Fs)
+
+
+    ./tempo_dataFolder/07-Operation_Eagle_Lie.wav
+
+
+    /var/folders/x0/2jvj2jrj35lbsw0h2_0t4lth0000gn/T/ipykernel_65482/1383756918.py:7: FutureWarning: Pass y=[-0.03109741  0.03964233  0.12585449 ... -0.01330566 -0.0055542
+      0.00320435] as keyword args. From version 0.10 passing these as positional arguments will result in an error
+      tempo_spect_flux = librosa.beat.tempo(y, sr=Fs)
+
+
+    ./tempo_dataFolder/01-Dancing_with_the_Moonlit_Knight.wav
+
+
+    /var/folders/x0/2jvj2jrj35lbsw0h2_0t4lth0000gn/T/ipykernel_65482/1383756918.py:7: FutureWarning: Pass y=[-0.12460327 -0.12872314 -0.14764404 ...  0.2246399   0.25360107
+      0.2919922 ] as keyword args. From version 0.10 passing these as positional arguments will result in an error
+      tempo_spect_flux = librosa.beat.tempo(y, sr=Fs)
+
+
+    ./tempo_dataFolder/12-Culture_Move.wav
+
+
+    /var/folders/x0/2jvj2jrj35lbsw0h2_0t4lth0000gn/T/ipykernel_65482/1383756918.py:7: FutureWarning: Pass y=[ 0.14950562  0.16830444  0.1300354  ... -0.30807495 -0.2388916
+     -0.16046143] as keyword args. From version 0.10 passing these as positional arguments will result in an error
+      tempo_spect_flux = librosa.beat.tempo(y, sr=Fs)
+
+
+    ./tempo_dataFolder/02-Knowing Me, Knowing You.wav
+
+
+    /var/folders/x0/2jvj2jrj35lbsw0h2_0t4lth0000gn/T/ipykernel_65482/1383756918.py:7: FutureWarning: Pass y=[0.0000000e+00 3.0517578e-04 5.4931641e-04 ... 3.0517578e-05 3.0517578e-05
+     0.0000000e+00] as keyword args. From version 0.10 passing these as positional arguments will result in an error
+      tempo_spect_flux = librosa.beat.tempo(y, sr=Fs)
+
+
+    ./tempo_dataFolder/12-It_s_Not_Up_To_You.wav
+
+
+    /var/folders/x0/2jvj2jrj35lbsw0h2_0t4lth0000gn/T/ipykernel_65482/1383756918.py:7: FutureWarning: Pass y=[0.28012085 0.27703857 0.26620483 ... 0.02310181 0.0246582  0.0255127 ] as keyword args. From version 0.10 passing these as positional arguments will result in an error
+      tempo_spect_flux = librosa.beat.tempo(y, sr=Fs)
+
+
+    ./tempo_dataFolder/es_flat_ahs_flat_too.wav
+
+
+    /var/folders/x0/2jvj2jrj35lbsw0h2_0t4lth0000gn/T/ipykernel_65482/1383756918.py:7: FutureWarning: Pass y=[-0.09890747 -0.10931396 -0.09939575 ...  0.03631592  0.06607056
+      0.1020813 ] as keyword args. From version 0.10 passing these as positional arguments will result in an error
+      tempo_spect_flux = librosa.beat.tempo(y, sr=Fs)
 
 
 # Data Visualization
@@ -460,19 +530,118 @@ display(df)
 ```
 
 
-    ---------------------------------------------------------------------------
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-    NameError                                 Traceback (most recent call last)
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
 
-    <ipython-input-1-58f2f77665db> in <module>()
-          1 import pandas as pd
-          2 
-    ----> 3 data = np.zeros((len(song_list), 4))
-          4 
-          5 # Data is reorganized to be placed into a tabular format, percent difference is also calculated
-
-
-    NameError: name 'np' is not defined
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Estimated BPM</th>
+      <th>Librosa BPM</th>
+      <th>Human-Annotated BPM</th>
+      <th>Percent Difference</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>20-AudioTrack 20.wav</th>
+      <td>101.76</td>
+      <td>103.36</td>
+      <td>103.81</td>
+      <td>1.97</td>
+    </tr>
+    <tr>
+      <th>03-La Puesta De Sol.wav</th>
+      <td>117.60</td>
+      <td>117.45</td>
+      <td>116.91</td>
+      <td>0.59</td>
+    </tr>
+    <tr>
+      <th>14-Gimme! Gimme! Gimme! (A Man After Midnight).wav</th>
+      <td>117.60</td>
+      <td>117.45</td>
+      <td>120.00</td>
+      <td>2.00</td>
+    </tr>
+    <tr>
+      <th>01-24-24.wav</th>
+      <td>103.76</td>
+      <td>103.36</td>
+      <td>104.16</td>
+      <td>0.38</td>
+    </tr>
+    <tr>
+      <th>Trubaci - Nikol.wav</th>
+      <td>110.24</td>
+      <td>147.66</td>
+      <td>110.26</td>
+      <td>0.02</td>
+    </tr>
+    <tr>
+      <th>To pasoumi - Smyrni.wav</th>
+      <td>78.98</td>
+      <td>152.00</td>
+      <td>80.92</td>
+      <td>2.40</td>
+    </tr>
+    <tr>
+      <th>07-Operation_Eagle_Lie.wav</th>
+      <td>82.69</td>
+      <td>112.35</td>
+      <td>82.00</td>
+      <td>0.84</td>
+    </tr>
+    <tr>
+      <th>01-Dancing_with_the_Moonlit_Knight.wav</th>
+      <td>108.00</td>
+      <td>107.67</td>
+      <td>80.10</td>
+      <td>34.83</td>
+    </tr>
+    <tr>
+      <th>12-Culture_Move.wav</th>
+      <td>82.69</td>
+      <td>109.96</td>
+      <td>83.05</td>
+      <td>0.43</td>
+    </tr>
+    <tr>
+      <th>02-Knowing Me, Knowing You.wav</th>
+      <td>105.84</td>
+      <td>107.67</td>
+      <td>105.76</td>
+      <td>0.08</td>
+    </tr>
+    <tr>
+      <th>12-It_s_Not_Up_To_You.wav</th>
+      <td>80.18</td>
+      <td>161.50</td>
+      <td>80.31</td>
+      <td>0.16</td>
+    </tr>
+    <tr>
+      <th>es_flat_ahs_flat_too.wav</th>
+      <td>75.60</td>
+      <td>147.66</td>
+      <td>151.42</td>
+      <td>50.07</td>
+    </tr>
+  </tbody>
+</table>
+</div>
 
 
 Plot points specifying the calculated tempo by our algorithm, the calculated tempo by the Librosa library, and the human annotated tempo for each of the files given
